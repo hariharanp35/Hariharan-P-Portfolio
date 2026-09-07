@@ -1563,12 +1563,58 @@ p {
     18px 0 0 var(--blue),
     36px 0 0 var(--accent);
 }
-.contact-form {
+.contact-cta {
   margin: 55px 28px 35px 0;
   padding: 28px;
   border: 1px solid var(--line);
   background: color-mix(in srgb, var(--surface) 65%, transparent);
   box-shadow: 10px 10px 0 color-mix(in srgb, var(--blue) 13%, transparent);
+}
+.contact-cta-label {
+  display: block;
+  color: var(--accent);
+  font: 10px var(--mono);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.contact-cta h3 {
+  margin: 22px 0 12px;
+  font-size: clamp(24px, 2.4vw, 32px);
+  line-height: 1.1;
+}
+.contact-cta p {
+  max-width: 360px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.65;
+}
+.contact-email-button {
+  position: relative;
+  width: max-content;
+  max-width: 100%;
+  margin-top: 28px;
+  overflow: hidden;
+  clip-path: polygon(
+    0 0,
+    calc(100% - 10px) 0,
+    100% 10px,
+    100% 100%,
+    10px 100%,
+    0 calc(100% - 10px)
+  );
+}
+.contact-email-button:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -80%;
+  width: 45%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.28);
+  transform: skewX(-20deg);
+  animation: button-sweep 4s ease-in-out infinite;
+  pointer-events: none;
 }
 .contact-links a {
   padding: 8px 0;
@@ -1581,30 +1627,6 @@ p {
 .contact-links a:hover {
   border-color: var(--accent);
   transform: translateX(8px);
-}
-.contact-form .button {
-  position: relative;
-  overflow: hidden;
-  clip-path: polygon(
-    0 0,
-    calc(100% - 10px) 0,
-    100% 10px,
-    100% 100%,
-    10px 100%,
-    0 calc(100% - 10px)
-  );
-}
-.contact-form .button:after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -80%;
-  width: 45%;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.28);
-  transform: skewX(-20deg);
-  animation: button-sweep 4s ease-in-out infinite;
-  pointer-events: none;
 }
 @keyframes contact-signal {
   50% {
@@ -1644,9 +1666,45 @@ p {
 .contact-links a:hover {
   color: var(--accent);
 }
+.contact-cta {
+  display: grid;
+  gap: 0;
+}
 .contact-form {
   display: grid;
   gap: 25px;
+  margin: 55px 28px 35px 0;
+  padding: 28px;
+  border: 1px solid var(--line);
+  background: color-mix(in srgb, var(--surface) 65%, transparent);
+  box-shadow: 10px 10px 0 color-mix(in srgb, var(--blue) 13%, transparent);
+}
+.contact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-top: 10px;
+}
+.contact-actions .button {
+  min-width: 150px;
+}
+.contact-actions .button:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 4px;
+}
+@media (max-width: 520px) {
+  .contact-form {
+    margin-right: 0;
+    padding: 22px;
+  }
+  .contact-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+  .contact-actions .button {
+    width: 100%;
+  }
 }
 label {
   display: grid;
@@ -1668,10 +1726,6 @@ textarea {
 input:focus,
 textarea:focus {
   border-color: var(--accent);
-}
-.contact-form .button {
-  width: max-content;
-  margin-top: 10px;
 }
 .chatbot {
   position: fixed;
@@ -2378,7 +2432,7 @@ footer {
 .achievement-row,
 .mini-project,
 .internship-content,
-.contact-form {
+.contact-cta {
   transition:
     transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
     border-color 0.35s ease,
@@ -2461,7 +2515,7 @@ footer {
 .education-details,
 .internship-content,
 .project-card,
-.contact-form {
+.contact-cta {
   will-change: transform;
 }
 .skill-category-card:hover .skill-category-icon {
@@ -2583,7 +2637,7 @@ footer {
   .education-details,
   .internship-content,
   .project-card,
-  .contact-form,
+  .contact-cta,
   .skill-category-icon,
   .skill-badges span,
   .project-image img,
@@ -3614,7 +3668,7 @@ h3:hover {
 .contact:before {
   animation: contact-signal 3s ease-in-out infinite;
 }
-.contact-form .button:after {
+.contact-email-button:after {
   animation: button-sweep 4s ease-in-out infinite;
 }
 .footer-quote svg {
@@ -3816,7 +3870,7 @@ h2 {
 .achievement-row,
 .mini-project,
 .internship-content,
-.contact-form {
+.contact-cta {
   border-radius: 8px;
   box-shadow: 0 8px 24px rgba(23, 33, 43, 0.05);
 }
@@ -3832,7 +3886,7 @@ h2 {
 .achievement-badge,
 .achievement-badge i,
 .contact:before,
-.contact-form .button:after,
+.contact-email-button:after,
 .footer-quote svg {
   animation: none;
 }

@@ -117,36 +117,17 @@ const projects: Project[] = [
 ];
 const skillCategories = [
   {
-    title: "Programming Languages",
+    title: "Programming",
     icon: Braces,
-    skills: ["Python", "Java", "C", "JavaScript"],
+    skills: ["Python", "Java", "C","SQL","Swift","PHP"],
   },
   {
-    title: "Database",
-    icon: Database,
+    title: "Frontend",
+    icon: Monitor,
     skills: [
-      "MySQL",
-      "SQL",
-      "Database Management",
-      "SQL Queries",
-      "Joins",
-      "Aggregations",
-      "CTEs",
-      "Window Functions",
-    ],
-  },
-  {
-    title: "Tools & Technologies",
-    icon: Wrench,
-    skills: [
-      "Git",
-      "GitHub",
-      "VS Code",
-      "Microsoft Excel",
-      "Power BI",
-      "Tableau",
-      "Figma",
-      "Google Sheets",
+      "HTML",
+      "CSS",
+      "JavaScript",
     ],
   },
   {
@@ -155,49 +136,41 @@ const skillCategories = [
     skills: [
       "Python",
       "REST APIs",
-      "API Integration",
-      "Backend Development",
       "CRUD Operations",
-      "Database Connectivity",
     ],
   },
   {
-    title: "Frontend",
-    icon: Monitor,
+    title: "Database",
+    icon: Database,
     skills: [
-      "HTML5",
-      "CSS3",
-      "JavaScript",
-      "Responsive Web Design",
-      "UI/UX Design",
-      "Figma",
-      "Component-Based Development",
+      "MySQL",
     ],
   },
-  {
+    {
     title: "Data Analytics",
     icon: BarChart3,
     skills: [
-      "Data Cleaning",
-      "Exploratory Data Analysis (EDA)",
-      "Data Visualization",
-      "Statistical Analysis",
-      "KPI Reporting",
-      "Dashboard Development",
-      "Excel Analytics",
       "Power BI",
-      "DAX",
-      "Tableau",
+      "Excel",
       "Pandas",
       "NumPy",
       "Matplotlib",
       "Seaborn",
-      "ETL / ELT",
-      "OLTP vs OLAP",
-      "CRM",
-      "Data Modeling",
+      "Data Visualization",
     ],
   },
+  {
+    title: "Tools & Design",
+    icon: Wrench,
+    skills: [
+      "Git",
+      "GitHub",
+      "VS Code",
+      "Figma",
+      "Canva",
+    ],
+  },
+
 ];
 const coreSkills = new Set([
   "Python",
@@ -1116,9 +1089,9 @@ function App() {
           >
             <section className="marquee">
               <div className="marquee-track">
-                DATA ANALYTICS <span>✳</span> AI ENGINEERING <span>✳</span>{" "}
-                FULL-STACK <span>✳</span> PRODUCT DESIGN <span>✳</span> DATA
-                ANALYTICS <span>✳</span>
+                <span>✳</span><span>✳</span><span>✳</span>FULL-STACK DEVELOPER<span>✳</span> <span>✳</span>{" "}
+                <span>✳</span> UI&UX DESIGN <span>✳</span> <span>✳</span><span>✳</span>DATA
+                ANALYTICS <span>✳</span><span>✳</span><span>✳</span>
               </div>
             </section>
             <section id="about" className="section container about">
@@ -1527,13 +1500,12 @@ function App() {
                 <div className="experience-grid">
                   <div>
                     <h2>
-                      Real-world
+                      Learning by stepping 
                       <br />
-                      <em>experience.</em>
+                      <em>into the work.</em>
                     </h2>
                     <p className="experience-lede">
-                      Turning classroom foundations into practical work across
-                      data science and front-end development.
+                    
                     </p>
                   </div>
                   <div className="timeline">
@@ -1679,17 +1651,26 @@ function App() {
                     placeholder="A project, a collaboration, a hello..."
                   />
                 </label>
-                <button className="button button-primary" type="submit">
-                  {sent ? (
-                    <>
-                      Message sent <Check size={17} />
-                    </>
-                  ) : (
-                    <>
-                      Send message <Send size={16} />
-                    </>
-                  )}
-                </button>
+                <div className="contact-actions">
+                  <button className="button button-primary" type="submit">
+                    {sent ? (
+                      <>
+                        Message sent <Check size={17} />
+                      </>
+                    ) : (
+                      <>
+                        Send message <Send size={16} />
+                      </>
+                    )}
+                  </button>
+                  <a
+                    className="button button-secondary"
+                    href={`mailto:${contactEmail}?subject=${encodeURIComponent("Portfolio Contact")}`}
+                    aria-label={`Send a direct email to ${contactEmail}`}
+                  >
+                    Direct Mail <Mail size={17} />
+                  </a>
+                </div>
               </motion.form>
             </section>
           </motion.div>
