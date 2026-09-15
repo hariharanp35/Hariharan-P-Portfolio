@@ -85,7 +85,7 @@ const projects: Project[] = [
   {
     title: "Sales Performance Analysis Dashboard",
     category: "Data Analytics",
-    desc: "A Power BI dashboard built to analyze sales performance and identify trends across products, customers, and regions for data-driven decisions.",
+    desc: "1.Developed to analyze sales performance and identify key trends across products, customers, and regions for better data-driven decision-making. 2.Cleaned and analyzed sales data using Excel and MySQL, then built an interactive Power BI dashboard with KPIs and DAX measures to generate actionable business insights.",
     tags: ["Excel", "MySQL", "Power BI", "DAX"],
     image:
       "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=85",
@@ -95,7 +95,7 @@ const projects: Project[] = [
   {
     title: "Trick Bills",
     category: "Full-Stack",
-    desc: "A smart bill analysis web application designed to simplify expense tracking, automate bill categorization, and generate organized spending insights.",
+    desc: "1. Developed to simplify expense tracking and reduce the effort required to manually categorize bills and monitor spending. 2. Built a responsive expense management interface that automated bill categorization and generated expense insights, making expense tracking more organized and efficient.",
     tags: ["Python", "HTML", "CSS", "JavaScript"],
     image:
       "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=1200&q=85",
@@ -106,7 +106,7 @@ const projects: Project[] = [
   {
     title: "Shoe Store Website UI/UX Prototype",
     category: "UI/UX",
-    desc: "A simple, user-friendly shoe shopping experience shaped through wireframes and an interactive Figma prototype focused on navigation, usability, and accessibility.",
+    desc: "1. Designed a prototype to create a simple, user-friendly, and visually engaging shoe shopping experience. 2. Created wireframes and an interactive Figma prototype focused on intuitive navigation, usability, and accessibility.",
     tags: ["Figma"],
     image:
       "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1200&q=85",
@@ -119,34 +119,24 @@ const skillCategories = [
   {
     title: "Programming",
     icon: Braces,
-    skills: ["Python", "Java", "C","SQL","Swift","PHP"],
+    skills: ["Python", "Java", "C", "SQL", "Swift", "PHP"],
   },
   {
     title: "Frontend",
     icon: Monitor,
-    skills: [
-      "HTML",
-      "CSS",
-      "JavaScript",
-    ],
+    skills: ["HTML", "CSS", "JavaScript"],
   },
   {
     title: "Backend",
     icon: Server,
-    skills: [
-      "Python",
-      "REST APIs",
-      "CRUD Operations",
-    ],
+    skills: ["Python", "REST APIs", "CRUD Operations"],
   },
   {
     title: "Database",
     icon: Database,
-    skills: [
-      "MySQL",
-    ],
+    skills: ["MySQL"],
   },
-    {
+  {
     title: "Data Analytics",
     icon: BarChart3,
     skills: [
@@ -162,15 +152,8 @@ const skillCategories = [
   {
     title: "Tools & Design",
     icon: Wrench,
-    skills: [
-      "Git",
-      "GitHub",
-      "VS Code",
-      "Figma",
-      "Canva",
-    ],
+    skills: ["Git", "GitHub", "VS Code", "Figma", "Canva"],
   },
-
 ];
 const coreSkills = new Set([
   "Python",
@@ -1024,6 +1007,14 @@ function App() {
                 <a
                   className="button button-secondary"
                   href={resumeUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  View resume <ExternalLink size={17} />
+                </a>
+                <a
+                  className="button button-secondary"
+                  href={resumeUrl}
                   download
                 >
                   Download resume <FileDown size={17} />
@@ -1089,35 +1080,42 @@ function App() {
           >
             <section className="marquee">
               <div className="marquee-track">
-                <span>✳</span><span>✳</span><span>✳</span>FULL-STACK DEVELOPER<span>✳</span> <span>✳</span>{" "}
-                <span>✳</span> UI&UX DESIGN <span>✳</span> <span>✳</span><span>✳</span>DATA
-                ANALYTICS <span>✳</span><span>✳</span><span>✳</span>
+                <span>✳</span>
+                <span>✳</span>
+                <span>✳</span>FULL-STACK DEVELOPER<span>✳</span> <span>✳</span>{" "}
+                <span>✳</span> UI&UX DESIGN <span>✳</span> <span>✳</span>
+                <span>✳</span>DATA ANALYTICS <span>✳</span>
+                <span>✳</span>
+                <span>✳</span>
               </div>
             </section>
             <section id="about" className="section container about">
               <motion.div
-                className="section-label"
+                className="section-label about-label"
                 variants={reveal}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
               >
-                01 / About
+                ABOUT / A DEVELOPER IN PROGRESS
               </motion.div>
               <div className="about-grid">
-                <motion.div
+                <motion.a
+                  href={portraitUrl}
+                  target="_blank"
+                  rel="noreferrer"
                   className="portrait"
                   variants={reveal}
                   initial="hidden"
                   whileInView="visible"
                   whileHover={{ y: -8, rotate: -1 }}
                   viewport={{ once: true }}
+                  aria-label="Open Hariharan P profile photo in a new tab"
                 >
                   <div className="portrait-inner">
                     <img src={portraitUrl} alt="Hariharan P" />
-              
                   </div>
-                </motion.div>
+                </motion.a>
                 <motion.div
                   className="about-copy"
                   variants={reveal}
@@ -1125,28 +1123,29 @@ function App() {
                   whileInView="visible"
                   viewport={{ once: true }}
                 >
-                  <h2>
-                    Building with data.
-                    <br />
-                    <em>Designing with purpose.</em>
-                  </h2>
-                  <p>
-                    I like working where disciplines overlap. My practice moves
-                    between analytics, software, AI, and interface design,
-                    always looking for the clearest path from a messy problem to
-                    a useful outcome.
+                  <p className="about-intro">
+                    I’m a B.Tech AI & Data Science student focused on Full Stack
+                    Development, while exploring Data Analytics and UI/UX
+                    Design. I enjoy building practical, user-focused
+                    applications.
                   </p>
                   <p>
-                    Right now I’m deepening my engineering foundations, shipping
-                    small experiments, and learning how intelligent tools can
-                    make digital products feel more human.
+                    I learn by building and experimenting with web, AI, and
+                    data-driven projects. I continuously improve my skills
+                    through hands-on experience. I focus on creating simple,
+                    practical, and intuitive solutions.
                   </p>
-                  <div className="about-meta">
-                    <span>
-                      <strong>Based in</strong> India / open to the world
-                    </span>
-                    <span>
-                      <strong>Currently</strong> learning in public
+                  <p>
+                    I’m a curious and fast learner passionate about new
+                    technologies. My goal is to grow as a versatile technology
+                    professional. Eventually, I aim to build innovative products
+                    with real-world impact.
+                  </p>
+                  <div className="about-divider" />
+                  <div className="about-status">
+                    <span className="about-status-label">CURRENTLY</span>
+                    <span className="about-status-value">
+                      Learning • Building • Experimenting
                     </span>
                   </div>
                 </motion.div>
@@ -1227,7 +1226,7 @@ function App() {
                   Learning the fundamentals behind useful, intelligent software.
                 </p>
               </motion.div>
-              <div className="education-timeline">
+              <div className="education-timeline experience-grid">
                 {[
                   {
                     period: "2023 — 2027",
@@ -1235,7 +1234,7 @@ function App() {
                     title: "B.Tech - Artificial Intelligence and Data Science",
                     institution:
                       "Annapoorana Engineering College, Salem, Tamil Nadu",
-                    result: "CGPA: 8.18 (as of Semester 6)",
+                    result: "CGPA: 8.18/10 (as of Semester 6)",
                   },
                   {
                     period: "2022 — 2023",
@@ -1253,7 +1252,7 @@ function App() {
                   },
                 ].map((education, index) => (
                   <motion.article
-                    className="education-card"
+                    className="education-card internship-item"
                     key={`${education.period}-${education.title}`}
                     variants={reveal}
                     initial="hidden"
@@ -1261,10 +1260,7 @@ function App() {
                     transition={{ delay: index * 0.12 }}
                     viewport={{ once: true }}
                   >
-                    <div className="education-marker">
-                      <span>{String(index + 1).padStart(2, "0")}</span>
-                    </div>
-                    <div className="education-details">
+                    <div className="education-details internship-content">
                       <div className="education-topline">
                         <span className="education-period">
                           {education.period}
@@ -1275,7 +1271,15 @@ function App() {
                       </div>
                       <h3>{education.title}</h3>
                       <p>{education.institution}</p>
-                      <strong>{education.result}</strong>
+                      <strong
+                        className={
+                          education.result.startsWith("CGPA")
+                            ? "education-result education-result-cgpa"
+                            : "education-result"
+                        }
+                      >
+                        {education.result}
+                      </strong>
                     </div>
                   </motion.article>
                 ))}
@@ -1447,7 +1451,7 @@ function App() {
                   <motion.article
                     layout
                     key={project.title}
-                    className={`project-card ${index === 0 ? "featured" : ""} ${project.mini ? "mini-project" : ""}`}
+                    className={`project-card ${index < 3 ? "featured" : ""} ${project.mini && index >= 3 ? "mini-project" : ""}`}
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ delay: index * 0.06 }}
@@ -1455,7 +1459,20 @@ function App() {
                   >
                     <div className="project-image">
                       <img src={project.image} alt="" loading="lazy" />
-                      <span className="project-index">0{index + 1}</span>
+                      <span className="project-index">
+                        {[
+                          "I",
+                          "II",
+                          "III",
+                          "IV",
+                          "V",
+                          "VI",
+                          "VII",
+                          "VIII",
+                          "IX",
+                          "X",
+                        ][index] ?? index + 1}
+                      </span>
                       <a
                         href="#contact"
                         className="project-link"
@@ -1500,13 +1517,11 @@ function App() {
                 <div className="experience-grid">
                   <div>
                     <h2>
-                      Learning by stepping 
+                      Learning by stepping
                       <br />
                       <em>into the work.</em>
                     </h2>
-                    <p className="experience-lede">
-                    
-                    </p>
+                    <p className="experience-lede"></p>
                   </div>
                   <div className="timeline">
                     {[
@@ -1514,6 +1529,7 @@ function App() {
                         period: "Jun 2026 — Jul 2026",
                         role: "Data Science Intern",
                         company: "OdugaaTech Pvt. Ltd., Salem",
+                        skills: ["Python", "Data Analysis", "Visualization"],
                         highlights: [
                           "Analyzed real-world datasets using Python and data analysis tools to identify meaningful insights.",
                           "Performed data cleaning, preprocessing, and visualization to support data-driven analysis.",
@@ -1524,6 +1540,7 @@ function App() {
                         period: "Jun 2025 — Jul 2025",
                         role: "Front-End Web Development Intern",
                         company: "ALGOJAXION Global Soft Pvt. Ltd., Salem",
+                        skills: ["HTML", "CSS", "JavaScript", "Responsive Design"],
                         highlights: [
                           "Developed responsive website interfaces using HTML, CSS, and JavaScript.",
                           "Improved user experience by implementing responsive design principles.",
@@ -1554,6 +1571,11 @@ function App() {
                               <li key={highlight}>{highlight}</li>
                             ))}
                           </ul>
+                          <div className="experience-tags" aria-label="Skills used">
+                            {internship.skills.map((skill) => (
+                              <span key={skill}>{skill}</span>
+                            ))}
+                          </div>
                         </div>
                       </motion.article>
                     ))}
@@ -1918,7 +1940,7 @@ function App() {
             <div className="footer-main">
               <div className="footer-profile">
                 <h2>Hariharan P</h2>
-                <p>Aspiring Fullstack Developer</p>
+                <p>Aspiring Fullstack Developer, Data Analyst and UI&UX Designer </p>
               </div>
               <nav className="footer-navigation" aria-label="Footer navigation">
                 <div className="footer-navigation-column">
