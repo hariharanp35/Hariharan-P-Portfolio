@@ -1457,6 +1457,7 @@ p {
 }
 .project-info p {
   max-width: 430px;
+  white-space: pre-line;
 }
 .project-foot {
   margin-top: 26px;

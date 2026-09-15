@@ -85,7 +85,7 @@ const projects: Project[] = [
   {
     title: "Sales Performance Analysis Dashboard",
     category: "Data Analytics",
-    desc: "1.Developed to analyze sales performance and identify key trends across products, customers, and regions for better data-driven decision-making. 2.Cleaned and analyzed sales data using Excel and MySQL, then built an interactive Power BI dashboard with KPIs and DAX measures to generate actionable business insights.",
+    desc: "1. Developed to analyze sales performance and identify key trends across products, customers, and regions for better data-driven decision-making.\n2. Cleaned and analyzed sales data using Excel and MySQL, then built an interactive Power BI dashboard with KPIs and DAX measures to generate actionable business insights.",
     tags: ["Excel", "MySQL", "Power BI", "DAX"],
     image:
       "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=85",
@@ -95,7 +95,7 @@ const projects: Project[] = [
   {
     title: "Trick Bills",
     category: "Full-Stack",
-    desc: "1. Developed to simplify expense tracking and reduce the effort required to manually categorize bills and monitor spending. 2. Built a responsive expense management interface that automated bill categorization and generated expense insights, making expense tracking more organized and efficient.",
+    desc: "1. Developed to simplify expense tracking and reduce the effort required to manually categorize bills and monitor spending.\n2. Built a responsive expense management interface that automated bill categorization and generated expense insights, making expense tracking more organized and efficient.",
     tags: ["Python", "HTML", "CSS", "JavaScript"],
     image:
       "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=1200&q=85",
@@ -106,7 +106,7 @@ const projects: Project[] = [
   {
     title: "Shoe Store Website UI/UX Prototype",
     category: "UI/UX",
-    desc: "1. Designed a prototype to create a simple, user-friendly, and visually engaging shoe shopping experience. 2. Created wireframes and an interactive Figma prototype focused on intuitive navigation, usability, and accessibility.",
+    desc: "1. Designed a prototype to create a simple, user-friendly, and visually engaging shoe shopping experience.\n2. Created wireframes and an interactive Figma prototype focused on intuitive navigation, usability, and accessibility.",
     tags: ["Figma"],
     image:
       "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1200&q=85",
@@ -1447,11 +1447,14 @@ function App() {
                 ))}
               </div>
               <motion.div layout className="project-grid">
-                {shown.map((project, index) => (
+                {shown.map((project, index) => {
+                  const projectNumber = projects.indexOf(project) + 1;
+
+                  return (
                   <motion.article
                     layout
                     key={project.title}
-                    className={`project-card ${index < 3 ? "featured" : ""} ${project.mini && index >= 3 ? "mini-project" : ""}`}
+                    className={`project-card ${projectNumber <= 3 ? "featured" : ""} ${project.mini && projectNumber > 3 ? "mini-project" : ""}`}
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ delay: index * 0.06 }}
@@ -1471,7 +1474,7 @@ function App() {
                           "VIII",
                           "IX",
                           "X",
-                        ][index] ?? index + 1}
+                        ][projectNumber - 1] ?? projectNumber}
                       </span>
                       <a
                         href="#contact"
@@ -1500,7 +1503,8 @@ function App() {
                       </div>
                     </div>
                   </motion.article>
-                ))}
+                  );
+                })}
               </motion.div>
             </section>
             <section id="experience" className="section section-dark">
