@@ -1451,58 +1451,58 @@ function App() {
                   const projectNumber = projects.indexOf(project) + 1;
 
                   return (
-                  <motion.article
-                    layout
-                    key={project.title}
-                    className={`project-card ${projectNumber <= 3 ? "featured" : ""} ${project.mini && projectNumber > 3 ? "mini-project" : ""}`}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ delay: index * 0.06 }}
-                    viewport={{ once: true }}
-                  >
-                    <div className="project-image">
-                      <img src={project.image} alt="" loading="lazy" />
-                      <span className="project-index">
-                        {[
-                          "I",
-                          "II",
-                          "III",
-                          "IV",
-                          "V",
-                          "VI",
-                          "VII",
-                          "VIII",
-                          "IX",
-                          "X",
-                        ][projectNumber - 1] ?? projectNumber}
-                      </span>
-                      <a
-                        href="#contact"
-                        className="project-link"
-                        aria-label={`Open ${project.title}`}
-                      >
-                        <ArrowUpRight />
-                      </a>
-                    </div>
-                    <div className="project-info">
-                      <div className="project-category">
-                        {project.category}
-                        {project.date && (
-                          <span className="project-date">{project.date}</span>
-                        )}
+                    <motion.article
+                      layout
+                      key={project.title}
+                      className={`project-card ${projectNumber <= 3 ? "featured" : ""} ${project.mini && projectNumber > 3 ? "mini-project" : ""}`}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ delay: index * 0.06 }}
+                      viewport={{ once: true }}
+                    >
+                      <div className="project-image">
+                        <img src={project.image} alt="" loading="lazy" />
+                        <span className="project-index">
+                          {[
+                            "I",
+                            "II",
+                            "III",
+                            "IV",
+                            "V",
+                            "VI",
+                            "VII",
+                            "VIII",
+                            "IX",
+                            "X",
+                          ][projectNumber - 1] ?? projectNumber}
+                        </span>
+                        <a
+                          href="#contact"
+                          className="project-link"
+                          aria-label={`Open ${project.title}`}
+                        >
+                          <ArrowUpRight />
+                        </a>
                       </div>
-                      <h3>{project.title}</h3>
-                      <p>{project.desc}</p>
-                      <div className="project-foot">
-                        <div className="tags">
-                          {project.tags.map((tag) => (
-                            <span key={tag}>{tag}</span>
-                          ))}
+                      <div className="project-info">
+                        <div className="project-category">
+                          {project.category}
+                          {project.date && (
+                            <span className="project-date">{project.date}</span>
+                          )}
                         </div>
-                        <span className="outcome">{project.outcome}</span>
+                        <h3>{project.title}</h3>
+                        <p>{project.desc}</p>
+                        <div className="project-foot">
+                          <div className="tags">
+                            {project.tags.map((tag) => (
+                              <span key={tag}>{tag}</span>
+                            ))}
+                          </div>
+                          <span className="outcome">{project.outcome}</span>
+                        </div>
                       </div>
-                    </div>
-                  </motion.article>
+                    </motion.article>
                   );
                 })}
               </motion.div>
@@ -1544,7 +1544,12 @@ function App() {
                         period: "Jun 2025 — Jul 2025",
                         role: "Front-End Web Development Intern",
                         company: "ALGOJAXION Global Soft Pvt. Ltd., Salem",
-                        skills: ["HTML", "CSS", "JavaScript", "Responsive Design"],
+                        skills: [
+                          "HTML",
+                          "CSS",
+                          "JavaScript",
+                          "Responsive Design",
+                        ],
                         highlights: [
                           "Developed responsive website interfaces using HTML, CSS, and JavaScript.",
                           "Improved user experience by implementing responsive design principles.",
@@ -1575,7 +1580,10 @@ function App() {
                               <li key={highlight}>{highlight}</li>
                             ))}
                           </ul>
-                          <div className="experience-tags" aria-label="Skills used">
+                          <div
+                            className="experience-tags"
+                            aria-label="Skills used"
+                          >
                             {internship.skills.map((skill) => (
                               <span key={skill}>{skill}</span>
                             ))}
@@ -1944,7 +1952,10 @@ function App() {
             <div className="footer-main">
               <div className="footer-profile">
                 <h2>Hariharan P</h2>
-                <p>Aspiring Fullstack Developer, Data Analyst and UI&UX Designer </p>
+                <p>
+                  Aspiring Fullstack Developer, Data Analyst and UI&UX
+                  Designer{" "}
+                </p>
               </div>
               <nav className="footer-navigation" aria-label="Footer navigation">
                 <div className="footer-navigation-column">
